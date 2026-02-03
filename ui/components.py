@@ -9,8 +9,13 @@ import config
 
 def load_css():
     """Load custom CSS"""
-    with open('ui/theme.css') as f:
-        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+    try:
+        with open('ui/theme.css') as f:
+            st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+    except FileNotFoundError:
+        st.warning("Custom theme CSS not found. Using default styling.")
+    except Exception as e:
+        st.warning(f"Error loading custom theme: {e}")
 
 def render_header(title: str, subtitle: str = ""):
     """Render page header with gradient styling"""

@@ -2,6 +2,7 @@
 Compliance Engine - Monitors and validates compliance requirements
 """
 import random
+import numpy as np
 import pandas as pd
 from datetime import datetime, timedelta
 from typing import Dict, List
@@ -136,7 +137,3 @@ class ComplianceEngine:
             'audit_findings': random.randint(10, 30),
             'recommendations': random.randint(5, 15)
         }
-
-
-# Import numpy for compliance trends
-import numpy as np
