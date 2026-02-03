@@ -31,7 +31,9 @@ test_result() {
 
 echo "1. Testing Python Version..."
 PYTHON_VERSION=$(python --version 2>&1 | grep -oP '\d+\.\d+')
-if [[ "$PYTHON_VERSION" == "3.11" ]] || [[ "$PYTHON_VERSION" > "3.11" ]]; then
+PYTHON_MAJOR=$(echo $PYTHON_VERSION | cut -d. -f1)
+PYTHON_MINOR=$(echo $PYTHON_VERSION | cut -d. -f2)
+if [ "$PYTHON_MAJOR" -eq 3 ] && [ "$PYTHON_MINOR" -ge 11 ]; then
     test_result 0 "Python version $PYTHON_VERSION"
 else
     test_result 1 "Python version $PYTHON_VERSION (expected 3.11+)"
