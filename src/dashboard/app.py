@@ -3,6 +3,9 @@ AI Risk & Compliance Command Center - Main Streamlit Application
 Designed for Banks, SaaS, FinTech, and AI Companies
 """
 import sys
+import os
+sys.path.append(os.path.abspath("."))
+
 from pathlib import Path
 
 # Add project root to Python path to fix import issues
