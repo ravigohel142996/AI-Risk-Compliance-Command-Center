@@ -1,13 +1,23 @@
 [server]
 headless = true
-enableCORS = false
-enableXsrfProtection = true
 port = 8501
+enableCORS = false
 address = "0.0.0.0"
+maxUploadSize = 200
+enableXsrfProtection = false
+enableWebsocketCompression = true
 
 [browser]
 gatherUsageStats = false
 serverAddress = "0.0.0.0"
+
+[runner]
+magicEnabled = true
+fastReruns = true
+
+[client]
+toolbarMode = "minimal"
+showErrorDetails = false
 
 [theme]
 primaryColor = "#1f77b4"
